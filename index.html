@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Our Menu</p>
+  <p id="menuItem"></p>
+  <select name="" id="menuField" class="menuField">
+    <option value="Banku">Banku</option>
+    <option value="Fufu">Fufu</option>
+  </select>
+  <input type="submit" id="submit" class="menuSubmit">
+  <p id="userSelection"></p>
+  <p id="ingredient"></p>
+
+  <script>
+    item1 = "Banku"
+    item2 = "Fufu"
+    ing1 = "Cassava dough and corn dough"
+    ing2 = "Plantain and cassava"
+    document.getElementById("menuItem").innerHTML="We have :" + " 1. " +item1 + " 2. " +item2
+    const menuField = document.querySelector(".menuField")
+    const menuSubmit = document.querySelector(".menuSubmit")
+    
+    function checkMenu() {
+      const menuValue = (menuField.value)
+      if (menuValue == item1){
+        document.getElementById("userSelection").innerHTML = "You have selected " + item1
+        document.getElementById("ingredient").innerHTML = "The ingredients are " + ing1
+      }
+      else if (menuValue == item2){
+        document.getElementById("userSelection").innerHTML = "You selected " + item2
+        document.getElementById("ingredient").innerHTML = "The ingredients are " + ing2
+      }
+    }
+
+    menuSubmit.addEventListener("click", checkMenu);
+  </script>
+  
+</body>
+</html>
